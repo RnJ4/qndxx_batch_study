@@ -73,14 +73,17 @@ def saveHistory(token,cid):
 if __name__ == "__main__":
     for mid in open("mid.txt"):
         print("开始："+mid)
-        cid = getChapterId()
-        sign = getSign(mid)
-        token = getToken(sign)
-        res = saveHistory(token, cid)
+        try:
+            cid = getChapterId()
+            sign = getSign(mid)
+            token = getToken(sign)
+            res = saveHistory(token, cid)
+        except:
+            print(mid+"异常")
+            continue
+
         if res["errno"] == 0:
             print("保存观看记录成功")
         else:
             print("出错啦")
             print(res["errmsg"])
-
-
