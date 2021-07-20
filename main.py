@@ -72,6 +72,9 @@ def saveHistory(token,cid):
 
 if __name__ == "__main__":
     for mid in open("mid.txt"):
+        #跳过空行
+        if mid.isspace():
+          continue
         print("开始："+mid)
         try:
             cid = getChapterId()
