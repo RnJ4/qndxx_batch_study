@@ -72,8 +72,8 @@ def saveHistory(token,cid):
 
 if __name__ == "__main__":
     for mid in open("mid.txt"):
-        #跳过空行
-        if mid.isspace():
+        #跳过空行和注释行
+        if mid.isspace() or mid[0] == '#':
           continue
         print("开始："+mid)
         try:
