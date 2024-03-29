@@ -46,7 +46,7 @@ def getSign(mid):
 def getToken(sign):
 
     payload="sign="+urllib.parse.quote(sign)
-    url = "https://youthstudy.12355.net/apih5/api/user/get"
+    url = "https://youthstudy.12355.net/saomah5/api/user/get"
     response = r.request("POST", url, headers=youthstudyHeaders, data=payload)
     j=json.loads(response.text)
     # print(j["data"]["entity"]["token"])
